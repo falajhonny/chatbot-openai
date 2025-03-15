@@ -1,0 +1,211 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Contêiner principal */
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Títulos */
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Campos de entrada e botões */
+textarea, input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Histórico de Chat */
+.chat-history-container {
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  max-width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.chat-history {
+  padding: 10px;
+}
+
+.chat-history p {
+  padding: 5px;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+
+.chat-history .user {
+  text-align: right;
+  color: #007aff;
+}
+
+.chat-history .bot {
+  text-align: left;
+  color: #ffffff;
+}
+
+/* Botão de limpar histórico */
+.clear-history {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 12px;
+  background-color: #ff3b30;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.clear-history:hover {
+  opacity: 0.8;
+}
+
+/* Lista de Instruções */
+.instruction-list {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.instruction-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.instruction-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  margin: 5px 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.instruction-list input {
+  width: 70%;
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.instruction-list button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.instruction-list button:hover {
+  opacity: 0.7;
+}
+
+/* Notificações */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  z-index: 1000;
+  text-align: center;
+  max-width: 90%;
+}
+
+.notification.success {
+  background-color: #4caf50;
+}
+
+.notification.error {
+  background-color: #ff5252;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  textarea, input, button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .instruction-list li {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .instruction-list input {
+    width: 100%;
+  }
+
+  .notification {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
